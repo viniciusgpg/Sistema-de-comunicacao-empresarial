@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" docBase="C:\Users\edu_p\OneDrive\Documentos\NetBeansProjects\Projeto\build\web" path="/Projeto"/>
+<!--<Context path="/Projeto">
+  <Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" maxIdle="4" maxTotal="10" maxWaitMillis="15000" name="jdbc/WebSof" password="Calebeodeiadualboot2020_" type="javax.sql.DataSource" url="jdbc:sqlserver://projsofsge.database.windows.net:1433" username="SGE_"/>
+</Context>-->
