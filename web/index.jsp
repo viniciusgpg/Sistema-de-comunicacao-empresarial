@@ -19,7 +19,7 @@
         
         <header>
             <div class="TextoPrincipal">
-                Bem Vindo a CHATCOMPANY
+                Bem Vindo aooooooooooo CHATCOMPANY
             </div>
         </header>
  
