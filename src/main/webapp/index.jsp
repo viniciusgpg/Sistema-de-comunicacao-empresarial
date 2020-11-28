@@ -66,7 +66,7 @@
     height: 20px;
     }
     .navbar-default {
-        background-color: #887799;
+        background-color: #ACFBF5;
         border-color: #5A76E7;
     }
     
