@@ -1,8 +1,0 @@
-set 22, 2020 6:19:57 PM org.apache.catalina.core.ApplicationContext log
-INFORMAÇÕES: ContextListener: contextInitialized()
-set 22, 2020 6:19:57 PM org.apache.catalina.core.ApplicationContext log
-INFORMAÇÕES: SessionListener: contextInitialized()
-set 22, 2020 6:19:57 PM org.apache.catalina.core.ApplicationContext log
-INFORMAÇÕES: ContextListener: attributeAdded('StockTicker', 'async.Stockticker@6de4bd34')
-set 22, 2020 6:19:57 PM org.apache.catalina.core.ApplicationContext log
-INFORMAÇÕES: ContextListener: attributeAdded('org.apache.jasper.compiler.TldLocationsCache', 'org.apache.jasper.compiler.TldLocationsCache@35d229de')
