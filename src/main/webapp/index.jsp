@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-        <title>EDUUUUUUUUUUUUUUUUU</title>
+        <title>Tela principal</title>
     </head>
     <body>
         <%
@@ -66,7 +66,7 @@
     height: 20px;
     }
     .navbar-default {
-        background-color: #ACFBF5;
+        background-color: #887799;
         border-color: #5A76E7;
     }
     
