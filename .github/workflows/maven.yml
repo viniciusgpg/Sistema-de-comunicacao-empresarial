@@ -1,0 +1,33 @@
+name: Deploy Automatico
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Escolher versão do Java
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Aumentar velocidade do build dos pacotes Maven
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2    
+    - name: Buildar projeto Maven
+      run: 
+        mvn -B package --file pom.xml  
+    - name: Subir Projeto no Heroku
+      env:
+            HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+            HEROKU_APP_NAME: sistema-empresarial
+      run: heroku plugins:install java && heroku war:deploy target/ProjetoMaven-1.0-SNAPSHOT.war --app sistema-empresarial
