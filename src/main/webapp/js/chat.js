@@ -41,7 +41,7 @@ function ChatWidget(pusher){
     });
     
     
-};
+}
 
 
 ChatWidget.prototype._latestMessages = function(){
