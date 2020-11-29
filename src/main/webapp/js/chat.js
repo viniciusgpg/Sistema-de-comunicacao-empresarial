@@ -9,21 +9,21 @@ function ChatWidget(pusher){
     
     this.pusher = pusher;
     
-    this.channelName = 'chat';
+    this.channelName = "chat";
     
-    this.chatContainer = $('.chat-widget');
+    this.chatContainer = $(".chat-widget");
     
-    this.messageContainer = $('.chat-messages');
+    this.messageContainer = $(".chat-messages");
     
-    this.chatName = $('.chat-name');
+    this.chatName = $(".chat-name");
     
-    this.chatEntry = $('.chat-entry');
+    this.chatEntry = $(".chat-entry");
     
     this.channel = this.pusher.subscribe(this.channelName);
     
     this._latestMessages(); 
     
-    this.channel.bind('new-message', function(data){
+    this.channel.bind("new-message", function(data){
        self._displayMensagens(data);
     });
     
@@ -48,9 +48,9 @@ ChatWidget.prototype._latestMessages = function(){
     var self = this;
    
     $.ajax({
-        url : 'latest_messages',
-        dataType: 'json',
-        type: 'get',
+        url : "latest_messages",
+        dataType: "json",
+        type: "get",
         success : function (data){
             $.each(data, function(i, message){
                 self._displayMensagens(message);
@@ -69,14 +69,14 @@ ChatWidget.prototype._displayMensagens = function(message){
 ChatWidget.prototype._sendMensagens = function(message){
     
     $.ajax({
-        url: 'create',
+        url: "create",
         type: 'post',
         data: {
             message: message.message,
             name: message.name
         },
         success: function (data) {
-            console.log(data);
+           // console.log(data);
             
         }
     });
