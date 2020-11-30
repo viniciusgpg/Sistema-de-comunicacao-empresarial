@@ -1285,6 +1285,47 @@ public class CEOBD  {
             return false;
         }
     }
+public static ArrayList<Projeto> Listar_projeto_equipe(int id){
+
+
+        ArrayList<Projeto> projs=new ArrayList<>();
+        String connectionUrl =
+                "jdbc:mysql://WEBSOFT.chlhdmd5beba.us-east-1.rds.amazonaws.com:3306/WEBSOFT?user=SGE&password=alebeodeiadualboot2020";
+
+        ResultSet resultSet ;
+
+
+       try {
+            //String sql="SELECT * FROM dbo.CEO WHERE email=? AND senha=? ;";
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+        Connection connection = DriverManager.getConnection(connectionUrl);
+            PreparedStatement statement = connection.prepareStatement(" select * from Projeto p inner join Projeto_Equipe pe\n" +
+"on (pe.ID_projeto=p.ID AND pe.ID_equipe=?);");
+            statement.setInt(1, id);
+
+            resultSet=statement.executeQuery();
+
+            while(resultSet.next()){
+                Projeto proj=new Projeto();
+                proj.setId(resultSet.getInt("ID"));
+                proj.setNome(resultSet.getString("nomeE"));
+                if(resultSet.getString("statusP").equals("Ativo")){
+                    proj.setStatus(true);
+                }
+                else{
+                    proj.setStatus(false);
+                }
+
+                proj.setPrazo(resultSet.getString("Criacao") );
+                projs.add(proj);
+            }
+       }
+            catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return projs;
+    }
     public static void main(String[] args) {
         String nome="edy",Rg="23434354";
         boolean gerente=true;
