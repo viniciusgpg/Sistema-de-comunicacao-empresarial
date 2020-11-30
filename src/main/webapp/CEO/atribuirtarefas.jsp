@@ -37,7 +37,7 @@
                         </p>
                         <p> 
                             <label>Nova Tarefa</label>
-                            <input name="tarefa1" class="form-control" required="required" type="text" maxlength="9"/>
+                            <input name="tarefa1" class="form-control" required="required" type="text" />
                         </p>
                         <p> 
                             <label>Segunda Tarefa</label>
