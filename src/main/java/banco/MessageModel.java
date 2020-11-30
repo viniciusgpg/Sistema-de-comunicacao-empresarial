@@ -18,7 +18,7 @@ public class MessageModel {
     
     public ArrayList<Mensagens> get(int id_proj){
         
-        ArrayList<Mensagens> mensagens = new ArrayList<>();
+        ArrayList<Mensagens> mensagens = new ArrayList<Mensagens>();
         
         
         String connectionUrl =
