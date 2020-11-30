@@ -36,7 +36,7 @@ public class TestnovotesteJUNIT extends DBTestCase{
     }
     
     protected IDataSet getDataSet() throws Exception{
-        bancoCarregado = new FlatXmlDataSetBuilder().build(new FileInputStream("/home/vinicius/Sistema-de-comunicacao-empresarial/src/test/java/dominio/conjuntodados/dataset.xml"));
+        bancoCarregado = new FlatXmlDataSetBuilder().build(new FileInputStream("dataset.xml"));
         return bancoCarregado;
     }
    
