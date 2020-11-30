@@ -21,12 +21,12 @@
         String nome=request.getParameter("nome_departamento");
         String coordenador=request.getParameter("coordenador");
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
             if(ceo==null){
-                response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
             }
             else{
                 String empresa=ceo.getEmpresa();
@@ -36,10 +36,10 @@
                 dep.setID(id);
                 dep.setNome(nome);
                 if(CEOBD.Cadastrar_Departamento(dep)){
-                    response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=criado");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=criado");
                 }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/gerar_Departamento.jsp?erro=falhou");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/gerar_Departamento.jsp?erro=falhou");
                 }
                 
             }

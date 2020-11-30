@@ -17,12 +17,12 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                   <a class="navbar-brand" href="http://localhost:8080/Company/index.jsp">ChatCompany</a>
+                   <a class="navbar-brand" href="http://sistema-empresarial.herokuapp.com/index.jsp">ChatCompany</a>
                 </div>
                 <ul class="nav navbar-nav">
-                  <li><a href="http://localhost:8080/Company/Menu_CEO.jsp">Menu</a></li>
-                  <li><a href="http://localhost:8080/Company/CEO/sobrenos.jsp">Quem somos</a></li>
-                  <li><a href="http://localhost:8080/Company/CEO/contato.jsp">Fale conosco</a></li>
+                  <li><a href="http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp">Menu</a></li>
+                  <li><a href="http://sistema-empresarial.herokuapp.com/CEO/sobrenos.jsp">Quem somos</a></li>
+                  <li><a href="http://sistema-empresarial.herokuapp.com/CEO/contato.jsp">Fale conosco</a></li>
                 </ul>
             </div>
         </nav>
@@ -39,14 +39,14 @@
                         String departamento=request.getParameter("departamento");
                         String equipe=request.getParameter("equipe");
                         if(session.isNew()){
-                            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                         }
                         else{
                             CEO ceo=(CEO) session.getAttribute("CEO");
                             if(ceo==null){
                                 Funcionario ger=(Funcionario)session.getAttribute("Gerente");
                                 if(ger==null){
-                                    response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                                 }
                                 else{
                                     int id=CEOBD.ProcurarID_Equipe(equipe, ger.getID_departamento());
@@ -60,7 +60,7 @@
                                                 <%
                                                     }
                                      }else{
-                                         response.sendRedirect("http://localhost:8080/Company/listar_fun_equipe.jsp?erro=N_EQUIPE");
+                                         response.sendRedirect("http://sistema-empresarial.herokuapp.com/listar_fun_equipe.jsp?erro=N_EQUIPE");
                                      }
                                 }
                 
@@ -95,10 +95,10 @@
                                         </table>
                                         <%
                                      }else{
-                                         response.sendRedirect("http://localhost:8080/Company/listar_fun_equipes.jsp?erro=N_EQUIPE");
+                                         response.sendRedirect("http://sistema-empresarial.herokuapp.com/listar_fun_equipes.jsp?erro=N_EQUIPE");
                                      }
                                 }else{
-                                    response.sendRedirect("http://localhost:8080/Company/listar_fun_equipes.jsp?erro=N_DEP");
+                                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/listar_fun_equipes.jsp?erro=N_DEP");
                                 }
                                 
                         
@@ -117,12 +117,12 @@
                             Funcionario fun=(Funcionario) session.getAttribute("Gerente");
                             if(fun!=null){
                             %>
-                            <a href="http://localhost:8080/Company/Menu_Gerente.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
+                            <a href="http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
                         <%
                             }
                          }else{ 
                         %>
-                           <a href="http://localhost:8080/Company/Menu_CEO.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
+                           <a href="http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
                            <%
                            }
                            %>

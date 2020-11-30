@@ -22,29 +22,29 @@
         String email=request.getParameter("email");
         
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
             if(ceo==null){
                 Funcionario fun=(Funcionario) sessao.getAttribute("Gerente");
                 if(fun==null){
-                    response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                 }
                 if(CEOBD.Deletar_Funcionario_Departamento(email, fun.getID_departamento())){
-                    response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp?sucesso=removido");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp?sucesso=removido");
                 }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/remover_funcionario.jsp?erro=N_EMAIL");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/remover_funcionario.jsp?erro=N_EMAIL");
                 }
             }
             else{
                 String empresa=ceo.getEmpresa();
                if(CEOBD.Deletar_Funcionario_Empresa(email, empresa)){
-                   response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=removido");
+                   response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=removido");
                }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/remover_funcionarios.jsp?erro=N_EMAIL");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/remover_funcionarios.jsp?erro=N_EMAIL");
                 }
             }
         }

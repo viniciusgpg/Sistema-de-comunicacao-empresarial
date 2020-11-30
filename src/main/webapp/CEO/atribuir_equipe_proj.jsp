@@ -28,14 +28,14 @@
          // nome = Normalizer.normalize(nome, Normalizer.Form.NFD);
           //nome = nome.replaceAll("[^\p{ASCII}]", "");
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
             if(ceo==null){
                 Funcionario fun=(Funcionario) sessao.getAttribute("Gerente");
                 if(fun==null){
-                    response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                 }
                 else{
                 Projeto p=new Projeto();
@@ -47,15 +47,15 @@
                 e.setID(id_equipe);
                 e.setID_departamento(fun.getID_departamento());
                 if(id_equipe==-1){
-                    response.sendRedirect("http://localhost:8080/Company/CEO/equipe_projeto.jsp?erro=N_EQUIPE");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/equipe_projeto.jsp?erro=N_EQUIPE");
                 }
                 else if(id_proj==-1){
-                    response.sendRedirect("http://localhost:8080/Company/CEO/equipe_projeto.jsp?erro=N_PROJ");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/equipe_projeto.jsp?erro=N_PROJ");
                 }
                 else if(CEOBD.Atribuir_Projeto_Equipe(p, e)){ 
-                    response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=atribuido");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=atribuido");
                 } else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/equipe_projeto.jsp?erro=N_BANCO");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/equipe_projeto.jsp?erro=N_BANCO");
                }
                 
             }
@@ -73,19 +73,19 @@
                 e.setID(id_equipe);
                 e.setID_departamento(id_dep);
                 if(id_dep==null){
-                    response.sendRedirect("http://localhost:8080/Company/CEO/equipe_projetos.jsp?erro=N_DEP");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/equipe_projetos.jsp?erro=N_DEP");
                 
                 }
                 else if(id_equipe==-1){
-                    response.sendRedirect("http://localhost:8080/Company/CEO/equipe_projetos.jsp?erro=N_EQUIPE");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/equipe_projetos.jsp?erro=N_EQUIPE");
                 }
                 else if(id_proj==-1){
-                    response.sendRedirect("http://localhost:8080/Company/CEO/equipe_projetos.jsp?erro=N_PROJ");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/equipe_projetos.jsp?erro=N_PROJ");
                 }
                 else if(CEOBD.Atribuir_Projeto_Equipe(p, e)){ 
-                    response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=atribuido");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=atribuido");
                 } else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/equipe_projetos.jsp?erro=N_BANCO");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/equipe_projetos.jsp?erro=N_BANCO");
                }
                 
                 

@@ -29,14 +29,14 @@
          // nome = Normalizer.normalize(nome, Normalizer.Form.NFD);
           //nome = nome.replaceAll("[^\p{ASCII}]", "");
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
             if(ceo==null){
                 Funcionario fun=(Funcionario) sessao.getAttribute("Gerente");
                 if(fun==null){
-                    response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                 }
                 int id_proj=CEOBD.ProcurarIDProjeto(projeto, fun.getID_departamento());
                 
@@ -44,25 +44,25 @@
                 if(tarefa1!=null){
                     
                    if( !CEOBD.Atribuir_Tarefa_Projeto(id_proj, tarefa1)){
-                       response.sendRedirect("http://localhost:8080/Company/CEO/atribuirtarefa.jsp?erro=tarefa1");
+                       response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/atribuirtarefa.jsp?erro=tarefa1");
                    
                    }
                 }
                 if(tarefa2!=null){
                     
                     if( !CEOBD.Atribuir_Tarefa_Projeto(id_proj, tarefa2)){
-                       response.sendRedirect("http://localhost:8080/Company/CEO/atribuirtarefa.jsp?erro=tarefa2");
+                       response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/atribuirtarefa.jsp?erro=tarefa2");
                    
                    }
                 }
                 if(tarefa3!=null){
                     
                     if( !CEOBD.Atribuir_Tarefa_Projeto(id_proj, tarefa3)){
-                       response.sendRedirect("http://localhost:8080/Company/CEO/atribuirtarefa.jsp?erro=tarefa3");
+                       response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/atribuirtarefa.jsp?erro=tarefa3");
                    
                    }
                 }
-                response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp?sucesso=criado");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp?sucesso=criado");
             }
             else{
                 String empresa=ceo.getEmpresa();
@@ -74,14 +74,14 @@
                     if(tarefa1!=null){
                     
                        if( !CEOBD.Atribuir_Tarefa_Projeto(id_proj, tarefa1)){
-                           response.sendRedirect("http://localhost:8080/Company/CEO/atribuirtarefas.jsp?erro=tarefa1");
+                           response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/atribuirtarefas.jsp?erro=tarefa1");
                    
                        }
                    }
                     if(tarefa2!=null){
                     
                         if( !CEOBD.Atribuir_Tarefa_Projeto(id_proj, tarefa2)){
-                           response.sendRedirect("http://localhost:8080/Company/CEO/atribuirtarefas.jsp?erro=tarefa2");
+                           response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/atribuirtarefas.jsp?erro=tarefa2");
                    
                        }
                    }
@@ -89,14 +89,14 @@
                     
                        if( !CEOBD.Atribuir_Tarefa_Projeto(id_proj, tarefa3)){
                            
-                           response.sendRedirect("http://localhost:8080/Company/CEO/atribuirtarefas.jsp?erro=tarefa3");
+                           response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/atribuirtarefas.jsp?erro=tarefa3");
                    
                        }
                    }
-                    response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=criado");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=criado");
                 
                 }else{    
-                    response.sendRedirect("http://localhost:8080/Company/CEO/atribuirtarefas.jsp?erro=projeto_n_existe");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/atribuirtarefas.jsp?erro=projeto_n_existe");
                 }
             }
             

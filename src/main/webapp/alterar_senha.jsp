@@ -26,10 +26,10 @@
          // nome = Normalizer.normalize(nome, Normalizer.Form.NFD);
           //nome = nome.replaceAll("[^\p{ASCII}]", "");
         if(!senhaN.equals(confirma)){
-             response.sendRedirect("http://localhost:8080/Company/alterarsenha.jsp?erro=SENHA_ERRADA");
+             response.sendRedirect("http://sistema-empresarial.herokuapp.com/alterarsenha.jsp?erro=SENHA_ERRADA");
         }
         else if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
@@ -38,15 +38,15 @@
                 if(ger==null){
                     Funcionario fun=(Funcionario) sessao.getAttribute("Funcionario");
                     if(fun==null){
-                        response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                        response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                     }
                     else{
                     if(CEOBD.alterar_Senha_Funcionario(fun.getEmail(), senhaV, senhaN)){
-                        response.sendRedirect("http://localhost:8080/Company/Menu_Funcionario.jsp?sucesso=alterado");
+                        response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Funcionario.jsp?sucesso=alterado");
                     
                     }
                     else{
-                        response.sendRedirect("http://localhost:8080/Company/alterarsenha.jsp");
+                        response.sendRedirect("http://sistema-empresarial.herokuapp.com/alterarsenha.jsp");
                     
                     }
                     
@@ -54,20 +54,20 @@
                 }
                 else{
                 if(CEOBD.alterar_Senha_Funcionario(ger.getEmail(), senhaV, senhaN)){
-                    response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp?sucesso=alterado");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp?sucesso=alterado");
                 }
                 else{
-                        response.sendRedirect("http://localhost:8080/Company/alterarsenha.jsp");
+                        response.sendRedirect("http://sistema-empresarial.herokuapp.com/alterarsenha.jsp");
                     }
                 
                 }
             }
             else{
                if(CEOBD.alterar_Senha_CEO(ceo.getEmail(), senhaV, senhaN)){
-                   response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=alterado");
+                   response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=alterado");
                }
                else{
-                        response.sendRedirect("http://localhost:8080/Company/alterarsenha.jsp");
+                        response.sendRedirect("http://sistema-empresarial.herokuapp.com/alterarsenha.jsp");
                     }
             }
         }

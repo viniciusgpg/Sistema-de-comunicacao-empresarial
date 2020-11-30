@@ -28,23 +28,23 @@
          // nome = Normalizer.normalize(nome, Normalizer.Form.NFD);
           //nome = nome.replaceAll("[^\p{ASCII}]", "");
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
             if(ceo==null){
                 Funcionario fun=(Funcionario) sessao.getAttribute("Gerente");
                 if(fun==null){
-                    response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                 }
                 Equipe equipe=new Equipe();
                 equipe.setID_departamento(fun.getID_departamento());
                 equipe.setNome(nome);
                 if(CEOBD.Criar_Equipe(equipe)){
-                    response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp?sucesso=criado");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp?sucesso=criado");
                 }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/compor_equipe.jsp?erro=N_EQUIPE");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/compor_equipe.jsp?erro=N_EQUIPE");
                 }
             }
             else{
@@ -55,14 +55,14 @@
                 equipe.setID_departamento(id_dep);
                 equipe.setNome(nome);
                 if(id_dep==null){
-                    response.sendRedirect("http://localhost:8080/Company/CEO/compor_equipes.jsp?erro=N_DEP");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/compor_equipes.jsp?erro=N_DEP");
                 }
                 
                 else if(CEOBD.Criar_Equipe(equipe)){
-                    response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=criado");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=criado");
                 }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/compor_equipes.jsp?erro=N_EQUIPE");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/compor_equipes.jsp?erro=N_EQUIPE");
                 }
             }
         }

@@ -11,7 +11,7 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <div class="navbar-header">
-                    <a class="navbar-brand" href="http://localhost:8080/Company/index.jsp">ChatCompany</a>
+                    <a class="navbar-brand" href="http://sistema-empresarial.herokuapp.com/index.jsp">ChatCompany</a>
                   </div>
                   <ul class="nav navbar-nav">
                     <li><a href="#">Sobre nós</a></li>

@@ -23,20 +23,20 @@
         String email=request.getParameter("email");
         
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
             if(ceo==null){
-                response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
             }
             else{
                 String empresa=ceo.getEmpresa();
                if(CEOBD.alterarStatusFun(email, empresa)){
-                   response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=alterado");
+                   response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=alterado");
                }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/alterar_Status_funs.jsp?erro=N_EMAIL");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/alterar_Status_funs.jsp?erro=N_EMAIL");
                 }
             }
         }

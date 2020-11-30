@@ -24,18 +24,18 @@
         
         
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }else{
             Funcionario ger = (Funcionario) sessao.getAttribute("Gerente");
            if(ger==null){
                 CEO ceo = (CEO) session.getAttribute("CEO");
                 if(ceo==null){
-                    response.sendRedirect("http://localhost:8080/Company/index.jsp?cadsstro=LOGIN_EXPIRADO");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp?cadsstro=LOGIN_EXPIRADO");
                  }
                 else{ 
                      cod=CEOBD.procurarCodDep(departamento, ceo.getEmpresa());
                     if(cod==null){
-                        response.sendRedirect("http://localhost:8080/Company/CEO/cadastrar_funcionario.jsp?erro=DEP_N_EXISTE");
+                        response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/cadastrar_funcionario.jsp?erro=DEP_N_EXISTE");
                     }
                     else{
                         Funcionario fun=new Funcionario();
@@ -44,7 +44,7 @@
                         fun.setNome(nome);
                         
                         if(CEOBD.validarEmail(email)){
-                          response.sendRedirect("http://localhost:8080/Company/CEO/cadastrar_funcionario.jsp?erro=Email_existe");
+                          response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/cadastrar_funcionario.jsp?erro=Email_existe");
                         }
                         fun.setEmail(email);
                         fun.setEmpresa(ceo.getEmpresa());
@@ -55,7 +55,7 @@
                             fun.setStatus_GERENTE(false);
                         }
                         CEOBD.Cadastrar_Funcionario(fun);
-                        response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=criado");
+                        response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=criado");
                         //fun.setStatus_GERENTE(status_GERENTE);
                     }
                
@@ -68,13 +68,13 @@
             fun.setRG(RG);
             fun.setNome(nome);
             if(CEOBD.validarEmail(email)){
-                response.sendRedirect("http://localhost:8080/Company/CEO/cadastrar_funcionarios.jsp?erro=Email_existe");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/cadastrar_funcionarios.jsp?erro=Email_existe");
             }
             fun.setEmail(email);
             fun.setEmpresa(ger.getEmpresa());
             fun.setStatus_GERENTE(false);
             CEOBD.Cadastrar_Funcionario(fun);
-             response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp?sucesso=criado");
+             response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp?sucesso=criado");
                        
            }
             }

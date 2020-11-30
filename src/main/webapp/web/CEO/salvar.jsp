@@ -39,10 +39,10 @@
                 System.out.println("Entro");
                 ceo.setSenha(senha);
                 //CEOBD.Inserir(ceo);
-                response.sendRedirect("http://localhost:8080/Company/index.jsp?cadsstro=SUCESSO");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp?cadsstro=SUCESSO");
             }else{
                 System.out.println("Não Entro");
-                response.sendRedirect("http://localhost:8080/Company/CEO/cadastrar.jsp?erro=SENHA_ERRADA");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/cadastrar.jsp?erro=SENHA_ERRADA");
             }
         %>
         

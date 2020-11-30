@@ -28,14 +28,14 @@
          // nome = Normalizer.normalize(nome, Normalizer.Form.NFD);
           //nome = nome.replaceAll("[^\p{ASCII}]", "");
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
             if(ceo==null){
                 Funcionario fun=(Funcionario) sessao.getAttribute("Gerente");
                 if(fun==null){
-                    response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                 }
                 Funcionario f=new Funcionario();
                 f.setID_departamento(fun.getID_departamento());
@@ -50,15 +50,15 @@
                 CEOBD.Atribuir_Funcionario_Equipe(f, e);
                 
                 if(id_equipe==-1){
-                    response.sendRedirect("http://localhost:8080/Company/CEO/Atribuir_Funcionario_Equipe_Gerente.jsp?erro=N_EQUIPE");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/Atribuir_Funcionario_Equipe_Gerente.jsp?erro=N_EQUIPE");
                 }
                 else if(CEOBD.Atribuir_Funcionario_Equipe(f, e)){
-                    response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp?sucesso=atribuido");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp?sucesso=atribuido");
                 }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/Atribuir_Funcionario_Equipe_Gerente.jsp?erro=N_EMAIL");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/Atribuir_Funcionario_Equipe_Gerente.jsp?erro=N_EMAIL");
                 }
-                response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp?sucesso=atribuido");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp?sucesso=atribuido");
             }
             else{
                 String empresa=ceo.getEmpresa();
@@ -74,16 +74,16 @@
                 e.setID(id_equipe);
                 e.setID_departamento(id_dep);
                 if(id_dep==null){
-                    response.sendRedirect("http://localhost:8080/Company/CEO/Atribuir_Funcionario_Equipe.jsp?erro=N_DEP");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/Atribuir_Funcionario_Equipe.jsp?erro=N_DEP");
                 }
                 else if(id_equipe==-1){
-                    response.sendRedirect("http://localhost:8080/Company/CEO/Atribuir_Funcionario_Equipe.jsp?erro=N_EQUIPE");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/Atribuir_Funcionario_Equipe.jsp?erro=N_EQUIPE");
                 }
                 else if(CEOBD.Atribuir_Funcionario_Equipe(f, e)){
-                    response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=atribuido");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=atribuido");
                 }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/Atribuir_Funcionario_Equipe.jsp?erro=N_EMAIL");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/Atribuir_Funcionario_Equipe.jsp?erro=N_EMAIL");
                 }
                 
             }

@@ -16,22 +16,22 @@ if (sessao != null) {
 CEO CEOEncontrado = CEOBD.procurarPorLoginSenha(login, senha);
 if (CEOEncontrado!=null){
     session.setAttribute("CEO", CEOEncontrado);
-    response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp");
+    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp");
 }else{
     Funcionario funcionario=CEOBD.ProcurarFuncionario(login, senha);
     if(funcionario!=null){
         if(funcionario.isStatus_GERENTE()){
             
             session.setAttribute("Gerente", funcionario);
-            response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp");
         }
         else{
             session.setAttribute("Funcionario", funcionario);
-            response.sendRedirect("http://localhost:8080/Company/Menu_Funcionario.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Funcionario.jsp");
         }
     }
     else{
-        response.sendRedirect("http://localhost:8080/Company/Pagina_Login.jsp?erro=USUARIO_NAO_EXISTE");
+        response.sendRedirect("http://sistema-empresarial.herokuapp.com/Pagina_Login.jsp?erro=USUARIO_NAO_EXISTE");
     }
 }
 %>

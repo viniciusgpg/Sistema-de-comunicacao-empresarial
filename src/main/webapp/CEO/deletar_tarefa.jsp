@@ -21,14 +21,14 @@
          // nome = Normalizer.normalize(nome, Normalizer.Form.NFD);
           //nome = nome.replaceAll("[^\p{ASCII}]", "");
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
             if(ceo==null){
                 Funcionario fun=(Funcionario) sessao.getAttribute("Gerente");
                 if(fun==null){
-                    response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                 }
                 int id_proj=CEOBD.ProcurarIDProjeto(projeto, fun.getID_departamento());
                 
@@ -39,7 +39,7 @@
                   CEOBD.Deletar_Tarefa(id);
                 }
                 
-                response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp?sucesso=removido");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp?sucesso=removido");
             }
             else{
                 String empresa=ceo.getEmpresa();
@@ -54,7 +54,7 @@
                   CEOBD.Deletar_Tarefa(id);
                 }
                 
-                response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=removido");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=removido");
             }
         }
         %>

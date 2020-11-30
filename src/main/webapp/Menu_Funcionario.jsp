@@ -10,12 +10,12 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <div class="navbar-header">
-                    <a class="navbar-brand" href="http://localhost:8080/Company/index.jsp">ChatCompany</a>
+                    <a class="navbar-brand" href="http://sistema-empresarial.herokuapp.com/index.jsp">ChatCompany</a>
                   </div>
                   <ul class="nav navbar-nav">
-                    <li><a href="http://localhost:8080/Company/Menu_Funcionario.jsp">Menu</a></li>
-                    <li><a href="http://localhost:8080/Company/CEO/sobrenos.jsp">Quem somos</a></li>
-                    <li><a href="http://localhost:8080/Company/CEO/contato.jsp">Fale conosco</a></li>
+                    <li><a href="http://sistema-empresarial.herokuapp.com/Menu_Funcionario.jsp">Menu</a></li>
+                    <li><a href="http://sistema-empresarial.herokuapp.com/CEO/sobrenos.jsp">Quem somos</a></li>
+                    <li><a href="http://sistema-empresarial.herokuapp.com/CEO/contato.jsp">Fale conosco</a></li>
                   </ul>
                 </div>
              </nav>
@@ -26,8 +26,8 @@
                     
                         <h1>Menu Funcionário</h1>
                           
-                  <a href="http://localhost:8080/Company/alterarsenha.jsp" class="btn btn-info btn-block">Alterar Senha</a>
-                  <a href="http://localhost:8080/Company/listar_projetos.jsp" class="btn btn-info btn-block">Mostrar Todos Projetos</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/alterarsenha.jsp" class="btn btn-info btn-block">Alterar Senha</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/listar_projetos.jsp" class="btn btn-info btn-block">Mostrar Todos Projetos</a>
                   
                 </div>
                 </div>

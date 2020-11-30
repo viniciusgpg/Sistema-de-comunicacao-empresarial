@@ -25,25 +25,25 @@
          // nome = Normalizer.normalize(nome, Normalizer.Form.NFD);
           //nome = nome.replaceAll("[^\p{ASCII}]", "");
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
             if(ceo==null){
                 Funcionario fun=(Funcionario) sessao.getAttribute("Gerente");
                 if(fun==null){
-                    response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                 }
                 int id_proj=CEOBD.ProcurarIDProjeto(projeto, fun.getID_departamento());
                 if(id_proj!=-1){
                     CEOBD.AlterarStatusProjeto(id_proj);
-                    response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp?sucesso=removido");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp?sucesso=removido");
                 }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/remover_equipe.jsp?erro=N_EQUIPE");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/remover_equipe.jsp?erro=N_EQUIPE");
                 }
                 
-                response.sendRedirect("http://localhost:8080/Company/Menu_Gerente.jsp");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp");
             }
             else{
                 String empresa=ceo.getEmpresa();
@@ -52,10 +52,10 @@
                 int id_proj=CEOBD.ProcurarIDProjeto(projeto, id_dep);
                 if(id_proj!=-1){
                     CEOBD.AlterarStatusProjeto(id_proj);
-                    response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=removido");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=removido");
                 }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/remover_equipes.jsp?erro=N_EQUIPE");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/remover_equipes.jsp?erro=N_EQUIPE");
                 }  
             }
         }

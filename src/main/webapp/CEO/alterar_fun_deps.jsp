@@ -23,24 +23,24 @@
         String email=request.getParameter("email");
         String dep=request.getParameter("departamento");
         if(sessao.isNew()){
-            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
         }
         else{
             CEO ceo=(CEO) session.getAttribute("CEO");
             if(ceo==null){
-                response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
             }
             else{
                 String empresa=ceo.getEmpresa();
                 String id=CEOBD.procurarCodDep(dep, empresa);
                 if(id==null){
-                    response.sendRedirect("http://localhost:8080/Company/CEO/alterar_fun_dep.jsp?erro=N_DEP");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/alterar_fun_dep.jsp?erro=N_DEP");
                 }
                 else if(CEOBD.alterar_Fun_dep(email, empresa, id)){
-                   response.sendRedirect("http://localhost:8080/Company/Menu_CEO.jsp?sucesso=alterado");
+                   response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=alterado");
                }
                 else{
-                    response.sendRedirect("http://localhost:8080/Company/CEO/alterar_fun_dep.jsp?erro=N_EMAIL");
+                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/alterar_fun_dep.jsp?erro=N_EMAIL");
                 }
             }
         }

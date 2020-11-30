@@ -18,7 +18,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                   <a class="navbar-brand" href="http://localhost:8080/Company/index.jsp">ChatCompany</a>
+                   <a class="navbar-brand" href="http://sistema-empresarial.herokuapp.com/index.jsp">ChatCompany</a>
                 </div>
                 <ul class="nav navbar-nav">
                   
@@ -28,25 +28,25 @@
                           if(ger==null){
                              Funcionario fun=(Funcionario)session.getAttribute("Funcionario");
                              if(fun==null){
-                                 response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                                 response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                              }
                              else{%>
-                               <li><a href="http://localhost:8080/Company/Menu_Funcionario.jsp">Menu</a></li>
+                               <li><a href="http://sistema-empresarial.herokuapp.com/Menu_Funcionario.jsp">Menu</a></li>
                                <%
                                    }
                           }else{
                             %>
-                               <li><a href="http://localhost:8080/Company/Menu_Gerente.jsp">Menu</a></li>
+                               <li><a href="http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp">Menu</a></li>
                                <%
                             }
                       }else{
                             %>
-                               <li><a href="http://localhost:8080/Company/Menu_CEO.jsp">Menu</a></li>
+                               <li><a href="http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp">Menu</a></li>
                                <%
                                    }
                       %>
-                  <li><a href="http://localhost:8080/Company/CEO/sobrenos.jsp">Quem somos</a></li>
-                  <li><a href="http://localhost:8080/Company/CEO/contato.jsp">Fale conosco</a></li>
+                  <li><a href="http://sistema-empresarial.herokuapp.com/CEO/sobrenos.jsp">Quem somos</a></li>
+                  <li><a href="http://sistema-empresarial.herokuapp.com/CEO/contato.jsp">Fale conosco</a></li>
                 </ul>
             </div>
         </nav>
@@ -67,7 +67,7 @@
                         }
                         String departamento=request.getParameter("departamento");
                         if(session.isNew()){
-                            response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                            response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                         }
                         else{
                             
@@ -77,7 +77,7 @@
                                     
                                     Funcionario fun=(Funcionario)session.getAttribute("Funcionario");
                                     if(fun==null){
-                                        response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                                        response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                                     }
                                     else{
                                         ArrayList<Projeto>projs=CEOBD.Listar_projeto_funcionario(fun.getEmail(), ativo);
@@ -102,15 +102,15 @@
                                                 <%
                                                     if(ativo){
                                                     %>
-                                                    <td class="nha"><a href="http://localhost:8080/Company/chatonline.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
+                                                    <td class="nha"><a href="http://sistema-empresarial.herokuapp.com/chatonline.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
                                                     <%
                                                     }else{
                                                  %>
-                                                   <td class="nha"><a href="http://localhost:8080/Company/chat.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
+                                                   <td class="nha"><a href="http://sistema-empresarial.herokuapp.com/chat.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
                                                    <% 
                                                    }
                                                    %>
-                                                   <td class="nha"><a href="http://localhost:8080/Company/listar_tarefas.jsp?id=<%= projs.get(i).getId() %>"a/>Tarefas</td>
+                                                   <td class="nha"><a href="http://sistema-empresarial.herokuapp.com/listar_tarefas.jsp?id=<%= projs.get(i).getId() %>"a/>Tarefas</td>
                                                    </tr>
                                            <%
                                            
@@ -144,15 +144,15 @@
                                                  <%
                                                     if(ativo){
                                                     %>
-                                                    <td class="nha"><a href="http://localhost:8080/Company/chatonline.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
+                                                    <td class="nha"><a href="http://sistema-empresarial.herokuapp.com/chatonline.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
                                                     <%
                                                     }else{
                                                  %>
-                                                   <td class="nha"><a href="http://localhost:8080/Company/chat.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
+                                                   <td class="nha"><a href="http://sistema-empresarial.herokuapp.com/chat.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
                                                    <% 
                                                    }
                                                    %>
-                                                   <td class="nha"><a href="http://localhost:8080/Company/listar_tarefas.jsp?id=<%= projs.get(i).getId() %>"a/>Tarefas</td>
+                                                   <td class="nha"><a href="http://sistema-empresarial.herokuapp.com/listar_tarefas.jsp?id=<%= projs.get(i).getId() %>"a/>Tarefas</td>
                                             </tr>
                                         <%
                                     }
@@ -185,16 +185,16 @@
                                                 <%
                                                     if(ativo){
                                                     %>
-                                                    <td class="nha"><a href="http://localhost:8080/Company/chatonline.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
+                                                    <td class="nha"><a href="http://sistema-empresarial.herokuapp.com/chatonline.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
                                                     <%
                                                     }else{
                                                  %>
-                                                   <td class="nha"><a href="http://localhost:8080/Company/chat.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
+                                                   <td class="nha"><a href="http://sistema-empresarial.herokuapp.com/chat.jsp?id=<%= projs.get(i).getId() %>"a/>Chat</td>
                                                    
                                                    <% 
                                                    }
                                                    %>
-                                                   <td class="nha"><a href="http://localhost:8080/Company/listar_tarefas.jsp?id=<%= projs.get(i).getId() %>"a/>Tarefas</td>
+                                                   <td class="nha"><a href="http://sistema-empresarial.herokuapp.com/listar_tarefas.jsp?id=<%= projs.get(i).getId() %>"a/>Tarefas</td>
                                             </tr>
                                         <%
                                     }
@@ -202,7 +202,7 @@
                                     </table>
                                     <%
                                 }else{
-                                    response.sendRedirect("http://localhost:8080/Company/listar_projeto.jsp?erro=N_DEP");
+                                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/listar_projeto.jsp?erro=N_DEP");
                                 }
                                 
                         
@@ -220,17 +220,17 @@
                             Funcionario fun=(Funcionario) session.getAttribute("Gerente");
                             if(fun!=null){
                             %>
-                            <a href="http://localhost:8080/Company/Menu_Gerente.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
+                            <a href="http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
                         <%
                             }else{
                               Funcionario f=(Funcionario) session.getAttribute("Funcionario");
                               if(f==null){
                                    %>
-                                   <a href="http://localhost:8080/Company/index.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
+                                   <a href="http://sistema-empresarial.herokuapp.com/index.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
                                    <%
                                     }else{
                                        %>
-                                       <a href="http://localhost:8080/Company/Menu_Funcionario.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
+                                       <a href="http://sistema-empresarial.herokuapp.com/Menu_Funcionario.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
                                        <%
                                        }
                             
@@ -239,7 +239,7 @@
                          else{
 
                                %>
-                               <a href="http://localhost:8080/Company/Menu_CEO.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
+                               <a href="http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp " class="btn btn-primary mb-2 corbotao">Voltar ao Menu</a>
                                <%
 
                             }

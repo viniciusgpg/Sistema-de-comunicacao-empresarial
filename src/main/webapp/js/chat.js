@@ -61,7 +61,7 @@ ChatWidget.prototype._latestMessages = function(){
 
 ChatWidget.prototype._displayMensagens = function(message){
     
-    var m = '<li class="left clearfix"><span class="chat-img pull-left"><img src="http://localhost:8080/Company/js/user.png"/></span><div class="chat-body clear-fix"><div class="header"><strong class="primary-font">'+ message.name +'</strong><small class="pull-right text-muted"><span class="glyphicon glyphicon-time"></span>' + '</small></div><p>'+ message.messages +'</p></div></li>';
+    var m = '<li class="left clearfix"><span class="chat-img pull-left"><img src="http://sistema-empresarial.herokuapp.com/js/user.png"/></span><div class="chat-body clear-fix"><div class="header"><strong class="primary-font">'+ message.name +'</strong><small class="pull-right text-muted"><span class="glyphicon glyphicon-time"></span>' + '</small></div><p>'+ message.messages +'</p></div></li>';
     this.messageContainer.prepend(m);
     
 };

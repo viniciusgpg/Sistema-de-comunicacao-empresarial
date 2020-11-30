@@ -52,12 +52,12 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <div class="navbar-header">
-                    <a class="navbar-brand" href="http://localhost:8080/Company/index.jsp">ChatCompany</a>
+                    <a class="navbar-brand" href="http://sistema-empresarial.herokuapp.com/index.jsp">ChatCompany</a>
                   </div>
                   <ul class="nav navbar-nav">
-                    <li><a href="http://localhost:8080/Company/Menu_CEO.jsp">Menu</a></li>
-                    <li><a href="http://localhost:8080/Company/CEO/sobrenos.jsp">Quem somos</a></li>
-                    <li><a href="http://localhost:8080/Company/CEO/contato.jsp">Fale conosco</a></li>
+                    <li><a href="http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp">Menu</a></li>
+                    <li><a href="http://sistema-empresarial.herokuapp.com/CEO/sobrenos.jsp">Quem somos</a></li>
+                    <li><a href="http://sistema-empresarial.herokuapp.com/CEO/contato.jsp">Fale conosco</a></li>
                   </ul>
                 </div>
              </nav>
@@ -68,14 +68,14 @@
                     <div class="card-body text-center">
                     <img src="users.png" alt="funcionario" width="150" height="150">
                     <h5 class="card-title">Funcionario</h5>
-                    <a href="http://localhost:8080/Company/CEO/cadastrar_funcionario.jsp" class="btn btn-info btn-block">Cadastrar</a>
-                  <a href="http://localhost:8080/Company/CEO/remover_funcionario.jsp" class="btn btn-info btn-block">Remover</a>
-                  <a href="http://localhost:8080/Company/CEO/alterar_Status_funs.jsp" class="btn btn-info btn-block">Alterar Status para Gerente</a>
-                  <a href="http://localhost:8080/Company/CEO/alterar_fun_dep.jsp" class="btn btn-info btn-block">Alterar Funcionario de Departamento</a>
-                  <a href="http://localhost:8080/Company/CEO/Atribuir_Funcionario_Equipe.jsp" class="btn btn-info btn-block">Atribuir Equipe</a>
-                  <a href="http://localhost:8080/Company/CEO/equipe_projetos.jsp" class="btn btn-info btn-block">Atribuir Projeto a Equipe</a>
-                  <a href="http://localhost:8080/Company/alterarsenha.jsp" class="btn btn-info btn-block">Alterar Senha</a>
-                  <a href="http://localhost:8080/Company/CEO/remover_equipes.jsp" class="btn btn-info btn-block">Remover Equipe</a>
+                    <a href="http://sistema-empresarial.herokuapp.com/CEO/cadastrar_funcionario.jsp" class="btn btn-info btn-block">Cadastrar</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/remover_funcionario.jsp" class="btn btn-info btn-block">Remover</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/alterar_Status_funs.jsp" class="btn btn-info btn-block">Alterar Status para Gerente</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/alterar_fun_dep.jsp" class="btn btn-info btn-block">Alterar Funcionario de Departamento</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/Atribuir_Funcionario_Equipe.jsp" class="btn btn-info btn-block">Atribuir Equipe</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/equipe_projetos.jsp" class="btn btn-info btn-block">Atribuir Projeto a Equipe</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/alterarsenha.jsp" class="btn btn-info btn-block">Alterar Senha</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/remover_equipes.jsp" class="btn btn-info btn-block">Remover Equipe</a>
                     </div>
                     </div>
                 
@@ -83,24 +83,24 @@
                     <div class="card-body text-center"  >
                     <img src="department.png" alt="companhia" width="150" height="150">
                     <h5 class="card-title">Companhia</h5>
-                    <a href="http://localhost:8080/Company/CEO/compor_equipes.jsp" class="btn btn-info btn-block">Criar Equipe</a>
-                  <a href="http://localhost:8080/Company/CEO/gerar_Departamento.jsp" class="btn btn-info btn-block">Gerar Departamento</a>
-                  <a href="http://localhost:8080/Company/CEO/criarprojetos.jsp" class="btn btn-info btn-block">Criar Projeto</a>
-                  <a href="http://localhost:8080/Company/CEO/atribuirtarefas.jsp" class="btn btn-info btn-block">Atribuir Tarefa</a>
-                  <a href="http://localhost:8080/Company/CEO/deletartarefas.jsp" class="btn btn-info btn-block">Remover Tarefa</a>
-                  <a href="http://localhost:8080/Company/CEO/remover_departamento.jsp" class="btn btn-info btn-block">Remover Departamento</a>
-                  <a href="http://localhost:8080/Company/CEO/alterar_status_projetos.jsp" class="btn btn-info btn-block">Desativar o Projeto</a>
+                    <a href="http://sistema-empresarial.herokuapp.com/CEO/compor_equipes.jsp" class="btn btn-info btn-block">Criar Equipe</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/gerar_Departamento.jsp" class="btn btn-info btn-block">Gerar Departamento</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/criarprojetos.jsp" class="btn btn-info btn-block">Criar Projeto</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/atribuirtarefas.jsp" class="btn btn-info btn-block">Atribuir Tarefa</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/deletartarefas.jsp" class="btn btn-info btn-block">Remover Tarefa</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/remover_departamento.jsp" class="btn btn-info btn-block">Remover Departamento</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/CEO/alterar_status_projetos.jsp" class="btn btn-info btn-block">Desativar o Projeto</a>
                     </div>
                 </div>
                 <div class="card bg-light col-md-4 text-center">
                 <div class="card-body">
                   <img src="conversation.png" alt="chat" width="150" height="150">
                   <h5 class="card-title">Outros</h5>
-                  <a href="http://localhost:8080/Company/listar_dep_funs.jsp" class="btn btn-info btn-block">Mostrar Funcionarios do Departamento</a>
-                  <a href="http://localhost:8080/Company/listar_departamento.jsp" class="btn btn-info btn-block">Mostrar Todos Departamento</a>
-                  <a href="http://localhost:8080/Company/listar_equipe.jsp" class="btn btn-info btn-block">Mostrar Todas Equipes</a>
-                  <a href="http://localhost:8080/Company/listar_fun_equipes.jsp" class="btn btn-info btn-block">Mostrar Funcionarios da Equipe</a>
-                  <a href="http://localhost:8080/Company/listar_projeto.jsp" class="btn btn-info btn-block">Mostrar Todos Projetos</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/listar_dep_funs.jsp" class="btn btn-info btn-block">Mostrar Funcionarios do Departamento</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/listar_departamento.jsp" class="btn btn-info btn-block">Mostrar Todos Departamento</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/listar_equipe.jsp" class="btn btn-info btn-block">Mostrar Todas Equipes</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/listar_fun_equipes.jsp" class="btn btn-info btn-block">Mostrar Funcionarios da Equipe</a>
+                  <a href="http://sistema-empresarial.herokuapp.com/listar_projeto.jsp" class="btn btn-info btn-block">Mostrar Todos Projetos</a>
                   
                   
                 </div>

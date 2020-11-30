@@ -13,7 +13,7 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <div class="navbar-header">
-                    <a class="navbar-brand" href="http://localhost:8080/Company/index.jsp">ChatCompany</a>
+                    <a class="navbar-brand" href="http://sistema-empresarial.herokuapp.com/index.jsp">ChatCompany</a>
                   </div>
                   <ul class="nav navbar-nav">
                     <%CEO ceo=(CEO)session.getAttribute("CEO");
@@ -22,25 +22,25 @@
                           if(ger==null){
                              Funcionario fun=(Funcionario)session.getAttribute("Funcionario");
                              if(fun==null){
-                                 response.sendRedirect("http://localhost:8080/Company/index.jsp");
+                                 response.sendRedirect("http://sistema-empresarial.herokuapp.com/index.jsp");
                              }
                              else{%>
-                               <li><a href="http://localhost:8080/Company/Menu_Funcionario.jsp">Menu</a></li>
+                               <li><a href="http://sistema-empresarial.herokuapp.com/Menu_Funcionario.jsp">Menu</a></li>
                                <%
                                    }
                           }else{
                             %>
-                               <li><a href="http://localhost:8080/Company/Menu_Gerente.jsp">Menu</a></li>
+                               <li><a href="http://sistema-empresarial.herokuapp.com/Menu_Gerente.jsp">Menu</a></li>
                                <%
                             }
                       }else{
                             %>
-                               <li><a href="http://localhost:8080/Company/Menu_CEO.jsp">Menu</a></li>
+                               <li><a href="http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp">Menu</a></li>
                                <%
                                    }
                       %>
-                    <li><a href="http://localhost:8080/Company/CEO/sobrenos.jsp">Quem somos</a></li>
-                    <li><a href="http://localhost:8080/Company/CEO/contato.jsp">Fale conosco</a></li>
+                    <li><a href="http://sistema-empresarial.herokuapp.com/CEO/sobrenos.jsp">Quem somos</a></li>
+                    <li><a href="http://sistema-empresarial.herokuapp.com/CEO/contato.jsp">Fale conosco</a></li>
                   </ul>
                 </div>
              </nav>
