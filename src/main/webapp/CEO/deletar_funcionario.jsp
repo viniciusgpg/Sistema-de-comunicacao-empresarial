@@ -41,7 +41,7 @@
              else{
                 String empresa=ceo.getEmpresa();
                 CEOBD.Deletar_Funcionario_Empresa(email, empresa);
-                response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=removido%22);
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=removido);
 
             }       }
         %>
