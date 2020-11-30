@@ -36,7 +36,7 @@
                         </p>
                         <p> 
                             <label>Nova Tarefa</label>
-                            <input name="tarefa1" class="form-control" required="required" type="text" maxlength="9"/>
+                            <input name="tarefa1" class="form-control" required="required" type="text" />
                         </p>
                         <p> 
                             <label>Segunda Tarefa</label>
@@ -44,7 +44,7 @@
                         </p>
                         <p> 
                             <label>Terceira Tarefa</label>
-                            <input name="tarefa2" class="form-control" required="required" type="text"/>
+                            <input name="tarefa3" class="form-control" required="required" type="text"/>
                         </p>
                         <div class="">
                             
