@@ -101,7 +101,7 @@
                   <a href="http://sistema-empresarial.herokuapp.com/listar_equipe.jsp" class="btn btn-info btn-block">Mostrar Todas Equipes</a>
                   <a href="http://sistema-empresarial.herokuapp.com/listar_fun_equipes.jsp" class="btn btn-info btn-block">Mostrar Funcionarios da Equipe</a>
                   <a href="http://sistema-empresarial.herokuapp.com/listar_projeto.jsp" class="btn btn-info btn-block">Mostrar Todos Projetos</a>
-<a href="http://sistema-empresarial.herokuapp.com/listar_proj_equipe.jsp" class="btn btn-info btn-block">Mostrar Projetos da Equipe</a>                  
+                  <a href="http://sistema-empresarial.herokuapp.com/listar_proj_equipe.jsp" class="btn btn-info btn-block">Mostrar Projetos da Equipe</a>                  
                   
                 </div>
                 </div>
