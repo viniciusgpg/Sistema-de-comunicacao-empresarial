@@ -30,7 +30,7 @@ public class CEOBD  {
         int resultSet ;
         try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            try (Connection connection = DriverManager.getConnection(connectionUrl)) {
+            Connection connection = DriverManager.getConnection(connectionUrl);
                 PreparedStatement statement = connection.prepareStatement("INSERT INTO CEO (nomeCeo,empresa,email ,senha,telefone) VALUES(?,?,?,?,?)");
                 statement.setString(1,ceoNew.getNome());
                 statement.setString(2,ceoNew.getEmpresa());
@@ -41,7 +41,7 @@ public class CEOBD  {
                 resultSet=statement.executeUpdate();
                 // Print results from select statement
                 return true;
-            }   
+              
         } catch (SQLException ex) {
             Logger.getLogger(CEOBD.class.getName()).log(Level.SEVERE, null, ex);
             return false;
@@ -57,14 +57,14 @@ public class CEOBD  {
         
         try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-            PreparedStatement statement = connection.prepareStatement("DELETE FROM CEO WHERE(email=?)");){
+            Connection connection = DriverManager.getConnection(connectionUrl);
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM CEO WHERE(email=?)");
             // Create and execute a SELECT SQL statement.
             statement.setString(1, email);
             resultSet=statement.executeUpdate();
             // Print results from select statement
             return true;
-        }   
+  
         }
        catch (SQLException ex) {
             Logger.getLogger(CEOBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,16 +80,15 @@ public class CEOBD  {
      
          try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            try (Connection connection = DriverManager.getConnection(connectionUrl);
-                PreparedStatement statement = connection.prepareStatement("UPDATE CEO SET senha=? WHERE email=? AND senha=?;");){
+            Connection connection = DriverManager.getConnection(connectionUrl);
+                PreparedStatement statement = connection.prepareStatement("UPDATE CEO SET senha=? WHERE email=? AND senha=?;");
                 // Create and execute a SELECT SQL statement.
                 statement.setString(1, senhaN);
                 statement.setString(2, email);
                 statement.setString(3, senhaV);
                 resultSet=statement.executeUpdate();
                 // Print results from select statement
-                return true;
-            }   
+                return true; 
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -105,8 +104,8 @@ public class CEOBD  {
      
          try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            try (Connection connection = DriverManager.getConnection(connectionUrl);
-                PreparedStatement statement = connection.prepareStatement("UPDATE Funcionario SET senha=? WHERE email=? AND senha=?;");){
+            Connection connection = DriverManager.getConnection(connectionUrl);
+                PreparedStatement statement = connection.prepareStatement("UPDATE Funcionario SET senha=? WHERE email=? AND senha=?;");
                 // Create and execute a SELECT SQL statement.
                 statement.setString(1, senhaN);
                 statement.setString(2, email);
@@ -114,7 +113,7 @@ public class CEOBD  {
                 resultSet=statement.executeUpdate();
                 // Print results from select statement
                 return true;
-            }   
+    
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -131,8 +130,8 @@ public class CEOBD  {
        
          try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            try (Connection connection = DriverManager.getConnection(connectionUrl);
-                PreparedStatement statement = connection.prepareStatement("select * FROM CEO c INNER JOIN Funcionario f on(c.empresa=f.empresa and (c.email=? or f.email=?))");) {
+            Connection connection = DriverManager.getConnection(connectionUrl);
+                PreparedStatement statement = connection.prepareStatement("select * FROM CEO c INNER JOIN Funcionario f on(c.empresa=f.empresa and (c.email=? or f.email=?))");
                 
                 // Create and execute a SELECT SQL statement.
                 statement.setString(1, email);
@@ -152,7 +151,6 @@ public class CEOBD  {
             
             // Print results from select statement
                
-        }
         catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -169,8 +167,8 @@ public class CEOBD  {
          try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             CEO ceo_novo;
-            try (Connection connection = DriverManager.getConnection(connectionUrl);
-                PreparedStatement statement = connection.prepareStatement("SELECT *  FROM CEO WHERE email=? AND senha=? ;");) {
+            Connection connection = DriverManager.getConnection(connectionUrl);
+                PreparedStatement statement = connection.prepareStatement("SELECT *  FROM CEO WHERE email=? AND senha=? ;");
                 // Create and execute a SELECT SQL statement.
                 statement.setString(1, email);
                 statement.setString(2, senha);
@@ -186,7 +184,7 @@ public class CEOBD  {
                     ceo_novo.setNome(resultSet.getString("nomeCeo"));
                     
                     
-                }}
+                }
             return ceo_novo;
             // Print results from select statement
                
@@ -326,8 +324,9 @@ public class CEOBD  {
         ResultSet resultSet ;
         //String sql="SELECT * FROM dbo.CEO WHERE email=? AND senha=? ;";
        
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-                PreparedStatement statement = connection.prepareStatement("select ID FROM Equipe where nomeE=? AND ID_Departamento=? ");) {
+        try{
+            Connection connection = DriverManager.getConnection(connectionUrl);
+            PreparedStatement statement = connection.prepareStatement("select ID FROM Equipe where nomeE=? AND ID_Departamento=? ");
             statement.setString(1,nomeE);
             statement.setString(2,ID_departamento);
             resultSet=statement.executeQuery();
@@ -342,7 +341,7 @@ public class CEOBD  {
                 return id;
               
            }
-        }   
+        }
         catch (SQLException e) {
             e.printStackTrace();
            return -1;
@@ -623,8 +622,9 @@ public class CEOBD  {
         int resultSet ;
         
        
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-                PreparedStatement statement = connection.prepareStatement(" delete from Tarefa where (ID=?);");) {
+        try{
+            Connection connection = DriverManager.getConnection(connectionUrl);
+            PreparedStatement statement = connection.prepareStatement(" delete from Tarefa where (ID=?);");
             statement.setInt(1, ID);
             resultSet=statement.executeUpdate();
             return true;
@@ -866,7 +866,7 @@ public class CEOBD  {
         }
     }
     public static ArrayList<Departamento> listar_Departamento(String empresa){
-        ArrayList<Departamento> deps=new ArrayList<>();
+        ArrayList<Departamento>deps=new ArrayList<Departamento>();
          String connectionUrl =
                 "jdbc:mysql://WEBSOFT.chlhdmd5beba.us-east-1.rds.amazonaws.com:3306/WEBSOFT?user=SGE&password=alebeodeiadualboot2020";
         
@@ -898,7 +898,7 @@ public class CEOBD  {
         
 }
     public static ArrayList<Equipe> listar_equipes(String id){
-        ArrayList<Equipe> eqps=new ArrayList<>();
+        ArrayList<Equipe> eqps=new ArrayList<Equipe>();
          String connectionUrl =
                 "jdbc:mysql://WEBSOFT.chlhdmd5beba.us-east-1.rds.amazonaws.com:3306/WEBSOFT?user=SGE&password=alebeodeiadualboot2020";
         
@@ -930,7 +930,7 @@ public class CEOBD  {
         return eqps;
     }
     public static ArrayList<Funcionario> Lista_funcionario_equipe(int id){
-        ArrayList<Funcionario> funs=new ArrayList<>();
+        ArrayList<Funcionario> funs=new ArrayList<Funcionario>();
         String connectionUrl =
                 "jdbc:mysql://WEBSOFT.chlhdmd5beba.us-east-1.rds.amazonaws.com:3306/WEBSOFT?user=SGE&password=alebeodeiadualboot2020";
         
@@ -975,7 +975,7 @@ public class CEOBD  {
         else{
             stt="Inativo";
         }
-        ArrayList<Projeto> projs=new ArrayList<>();
+        ArrayList<Projeto> projs=new ArrayList<Projeto>();
         String connectionUrl =
                 "jdbc:mysql://WEBSOFT.chlhdmd5beba.us-east-1.rds.amazonaws.com:3306/WEBSOFT?user=SGE&password=alebeodeiadualboot2020";
         
@@ -1021,7 +1021,7 @@ public class CEOBD  {
         else{
             stt="Inativo";
         }
-        ArrayList<Projeto> projs=new ArrayList<>();
+        ArrayList<Projeto> projs=new ArrayList<Projeto>();
         String connectionUrl =
                 "jdbc:mysql://WEBSOFT.chlhdmd5beba.us-east-1.rds.amazonaws.com:3306/WEBSOFT?user=SGE&password=alebeodeiadualboot2020";
         
@@ -1061,7 +1061,7 @@ public class CEOBD  {
         return projs;
     }
      public static ArrayList<String>Listar_tarefa(int id){
-         ArrayList<String> tarefas=new ArrayList<>();
+         ArrayList<String> tarefas=new ArrayList<String>();
         String connectionUrl =
                 "jdbc:mysql://WEBSOFT.chlhdmd5beba.us-east-1.rds.amazonaws.com:3306/WEBSOFT?user=SGE&password=alebeodeiadualboot2020";
         
@@ -1090,7 +1090,7 @@ public class CEOBD  {
         return tarefas;
     } 
     public static ArrayList<Mensagens> receber_mensagem(int id_proj){
-        ArrayList<Mensagens> mens=new ArrayList<>();
+        ArrayList<Mensagens> mens=new ArrayList<Mensagens>();
         String connectionUrl =
                 "jdbc:mysql://WEBSOFT.chlhdmd5beba.us-east-1.rds.amazonaws.com:3306/WEBSOFT?user=SGE&password=alebeodeiadualboot2020";
         
@@ -1124,7 +1124,7 @@ public class CEOBD  {
         return mens;
     }
     public static ArrayList<Funcionario> Mostrar_fun_dep(String id_dep){
-        ArrayList<Funcionario> funs=new ArrayList<>();
+        ArrayList<Funcionario> funs=new ArrayList<Funcionario>();
         String connectionUrl =
                 "jdbc:mysql://WEBSOFT.chlhdmd5beba.us-east-1.rds.amazonaws.com:3306/WEBSOFT?user=SGE&password=alebeodeiadualboot2020";
         
@@ -1272,11 +1272,13 @@ public class CEOBD  {
         int resultSet ;
         
        
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-                PreparedStatement statement = connection.prepareStatement(" delete from Mensagens where (ID_Projeto=?);");) {
+        try{
+            Connection connection = DriverManager.getConnection(connectionUrl);
+            PreparedStatement statement = connection.prepareStatement(" delete from Mensagens where (ID_Projeto=?);");
             statement.setInt(1, ID);
             resultSet=statement.executeUpdate();
             return true;
+            
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -1362,8 +1364,9 @@ public class CEOBD  {
         
         ResultSet resultSet ;
         
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-                Statement statement = connection.createStatement();) {
+        try {
+            Connection connection = DriverManager.getConnection(connectionUrl);
+            Statement statement = connection.createStatement(); 
 
             // Create and execute a SELECT SQL statement.
             String insertSql = "INSERT INTO CEO (nomeCeo,empresa,email ,senha,telefone,dataN) VALUES \n" + "("+"'"+nome+"'"+","+"'"+empresa+"'"+", "+"'"+email+"'"+", "+"'"+senha+"'"+","+"'"+tel+"'"+","+"'"+data+"'"+ ");" ;
