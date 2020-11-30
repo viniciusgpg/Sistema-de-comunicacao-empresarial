@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <CEO nomeCeo="xaropinho" empresa="ratinho" email="xaropinho@hotmail.com" senha="rapaaaz" telefone="12345698"/>
+  <CEO nomeCeo="cavalo" empresa="VACALO" email="cavalo@gmail.com" senha="meupatrao" telefone="12348576"/>
+</dataset>
