@@ -38,16 +38,12 @@
                     response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/remover_funcionario.jsp?erro=N_EMAIL");
                 }
             }
-            else{
+             else{
                 String empresa=ceo.getEmpresa();
-               if(CEOBD.Deletar_Funcionario_Empresa(email, empresa)){
-                   response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=removido");
-               }
-                else{
-                    response.sendRedirect("http://sistema-empresarial.herokuapp.com/CEO/remover_funcionarios.jsp?erro=N_EMAIL");
-                }
-            }
-        }
+                CEOBD.Deletar_Funcionario_Empresa(email, empresa);
+                response.sendRedirect("http://sistema-empresarial.herokuapp.com/Menu_CEO.jsp?sucesso=removido%22);
+
+            }       }
         %>
     </body>
 </html>
