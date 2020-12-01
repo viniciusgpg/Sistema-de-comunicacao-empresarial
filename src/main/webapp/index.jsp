@@ -43,7 +43,7 @@
                 <div style="margin-top: 20%;margin-bottom: -5%"></div>
                     <div clsas="BB1">
                         <button class="button button1" onclick="window.location.href='http://sistema-empresarial.herokuapp.com/Pagina_Login.jsp';">
-                            Logar
+                            Fazer Login
                         </button>
                         </div>
                     <div style="margin:  40px;">
